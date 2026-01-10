@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
@@ -14,15 +14,13 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": { 
+        "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/sigc-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -37,45 +35,26 @@
               "src/styles.scss"
             ],
             "scripts": [
-              
-               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server", 
-            "ssr": {
-              "entry": "src/server.ts"
-            }
-           
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
-               "fileReplacements": [
+              "fileReplacements": [
                 {
-                 "replace": "src/environments/environment.ts",
-                 "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-               "fileReplacements": [
-              {
-               "replace": "src/environments/environment.ts",
-               "with": "src/environments/environment.development.ts"
-              }
-           ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -84,10 +63,10 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "options": {
-          "proxyConfig": "proxy.conf.json"
-         } ,
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "sigc-frontend:build:production"
@@ -101,13 +80,10 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
-        "test": { 
+        "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -131,9 +107,6 @@
     }
   },
   "cli": {
-    "analytics": "38bf56ea-4c82-4ee5-88b0-fef7beb1011d",
-    "cache": {
-      "enabled": true
-    }
+    "analytics": "38bf56ea-4c82-4ee5-88b0-fef7beb1011d"
   }
 }
